@@ -1,0 +1,112 @@
+{% extends 'base/base2.html' %}
+{% load custom_template_tags %}
+
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'assets/web/detail_service.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <!--breadcrumbs area start-->
+    <div class="banner_services">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul style="color: white;">
+                            <h1>{{ service.name }}</h1>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li>blog details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--blog body area start-->
+    <div class="blog_details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <!--blog grid area start-->
+                    <div class="blog_wrapper blog_wrapper_details">
+                        <article class="single_blog">
+                            <figure>
+                                <figcaption class="blog_content">
+                                    <div class="post_content">
+                                        {{ service.description | safe }}
+                                    </div>
+                                    <div class="entry_content">
+
+                                        <div class="social_sharing">
+                                            <p>Comparte este servicio:</p>
+                                            <ul>
+                                                <li><a href="#" title="facebook" target="_blank"><i
+                                                        class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#" title="instagram" target="_blank"><i
+                                                        class="fa fa-instagram"></i></a></li>
+                                                <li><a href="#" title="pinterest" target="_blank"><i
+                                                        class="fa fa-pinterest"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <ol class="carousel-indicators">
+                                {% for img in gallery %}
+                                    {% set_indice forloop.counter as indice %}
+                                    <li data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="{{ indice }}"
+                                        class="{% if indice == 0 %} active {% endif %}"></li>
+                                {% endfor %}
+                            </ol>
+                            <div class="carousel-inner">
+                                {% for img in gallery %}
+                                    {% set_indice forloop.counter as indice %}
+                                    <div class="carousel-item {% if indice == 0 %} active {% endif %}">
+                                        <img src="{{ img.imagen.url }}" class="d-block w-100" alt="...">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                               data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                               data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
+
+                        <div class="related_posts">
+                            <h3>Más servicios</h3>
+                            <div class="container">
+                                <div class="row" id="contenido_servicio"
+                                     data-url-detail="{% url 'app-website:service-detail' 0 %}"
+                                     data-url="{% url 'app-administracion:api:list-api-service-list' %}">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--blog grid area start-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--blog section area end-->
+
+{% endblock %}

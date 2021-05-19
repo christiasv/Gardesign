@@ -1,0 +1,305 @@
+{% extends 'base/base.html' %}
+{% load custom_template_tags %}
+
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'assets/web/mi_js.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <!--slider area start-->
+    <section class="slider_section slider_s_two">
+        <div class="slider_area owl-carousel">
+            {% for slider in sliders %}
+                {% set_img slider.photo as indice %}
+                <div class="single_slider d-flex align-items-center" data-bgimg="{{ indice }}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slider_content">
+                                    <span>LO ULTIMO  EN Gardesign </span>
+                                    <h1>{{ slider.title | safe }}</h1>
+                                    {{ slider.texto | safe }}
+                                    {% if slider.more_info %}
+                                        <a class="button" href="{{ slider.more_info }}">Ver más</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!--slider area end-->
+
+    <!--Gardensign store title start-->
+    <div class="welcome_lukani_store">
+        <div class="container">
+            <div class="welcome_lukani_container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5">
+                        <div class="welcome_lukani_thumb">
+                            <img src="{% static 'assets/img/bg/img-top-vogue3.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="welcome_lukani_content">
+                            <div class="welcome_lukani_header">
+                                <h3>Bienvenidos a Gardesign</h3>
+                                <h2>Historia de Gardesign</h2>
+                            </div>
+                            <div class="welcome_lukani_desc">
+                                <p>GARDESIGN S.A.C. cuenta con años de experiencia dedicada al rubro de arquitectura
+                                    paisajista y jardinería integral. Brindamos servicio de asesoramiento, diseño,
+                                    instalación y mantenimiento de proyectos paisajísticos, áreas verdes, jardines
+                                    verticales naturales y artificiales, techos verdes, grass natural y sintético,
+                                    sistemas
+                                    de riego tecnificado, cascadas, estanques, muro llorón, velo de agua y
+                                    comercialización
+                                    de productos vanguardistas de jardinería entre otros.</p>
+                                <p>Contamos con profesionales y técnicos expertos en el manejo sostenible de los
+                                    recursos
+                                    naturales y artificiales donde nuestra misión es captar la sensibilidad, los gustos
+                                    y
+                                    las necesidades de cada cliente para ofrecer soluciones modernas, personalizadas,
+                                    funcionales y de calidad.</p>
+                            </div>
+                            <div class="welcome_lukani_footer">
+                                <img src="{% static 'assets/img/bg/signature.png' %}" alt="">
+                                <p style="font-family: 'Courgette', cursive; text-transform: capitalize;">“La conexión
+                                    del
+                                    hombre con la naturaleza, se manifiesta en su salud física y espiritual”</p>
+                                <p><span>Federico Conde Latou</span> – (1983)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Gardensign store titlev end-->
+
+    <!--service area start-->
+    <section class="blog_section blog_s_three">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Nuestros Servicios</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="contenido_servicio"
+                 data-url-detail="{% url 'app-website:service-detail' 0 %}"
+                 data-url="{% url 'app-administracion:api:list-api-service-list' %}">
+
+
+            </div>
+        </div>
+    </section>
+    <!--service area end-->
+
+    <!--product area start-->
+    <div class="product_area product_style2" style="margin-top: 50px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Nuestras Categorias</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="product_style2_ocntainer">
+                <div class="row">
+                    <!--shop  area start-->
+                    <div class="shop_area shop_fullwidth mb-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!--shop wrapper start-->
+                                    <div class="row shop_wrapper grid_4">
+                                        {% for category in categories %}
+                                            <div class="col-lg-3 col-md-4 col-12 ">
+                                                <article class="single_product">
+                                                    <figure>
+                                                        <div class="product_thumb">
+                                                            <a class="primary_img"
+                                                               href="{% url 'app-website:shop-category' category.id %}">
+                                                                {% set_img category.cover_image as indice %}
+                                                                <img src="{% if category.cover_image %} {{ indice }} {% endif %}" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="product_content grid_content">
+                                                            <div class="product_price_rating">
+                                                                <h4 class="product_name">
+                                                                    <a href="{% url 'app-website:shop-category' category.id %}">{{ category.name }}</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </article>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <!--shop wrapper end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--shop  area end-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--product area end-->
+
+    <!--testimonial area start-->
+    <div class="testimonial_area testimonial_two">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>¿Qué dicen nuestros clientes?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial_container">
+                <div class="row">
+                    <div class="testimonial_carousel owl-carousel">
+                        {% for comment in comments %}
+                            <div class="col-12">
+                                <div class="single-testimonial">
+                                    <div class="testimonial-icon-img">
+                                        <img src="{% static 'assets/img/about/testimonials-icon.png' %}" alt="">
+                                    </div>
+                                    <div class="testimonial_content">
+                                        {{ comment.comments | safe }}
+                                        <div class="testimonial_text_img">
+                                            {% set_img comment.image as indice %}
+                                            <a href="#"><img src="{{ indice }}" alt=""></a>
+                                        </div>
+                                        <div class="testimonial_author">
+                                            <p><a href="#">{{ comment.user }}</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--testimonial area end-->
+
+    <!--brand area start-->
+    <!--<div class="brand_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand_container owl-carousel">
+                        <div class="single_brand">
+                            <a href="#"><img src="assets/img/brand/brand1.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="assets/img/brand/brand2.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="assets/img/brand/brand3.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="assets/img/brand/brand4.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="assets/img/brand/brand5.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="assets/img/brand/brand6.png" alt=""></a>
+                        </div>
+                        <div class="single_brand">
+                            <a href="#"><img src="assets/img/brand/brand2.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--brand area end-->
+
+    <!--blog img area-->
+    <div class="blog_section blog_s_three">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Nuestros Blogs</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for blog in blogs %}
+                    <div class="col-lg-3">
+                        <article class="single_blog">
+                            <figure>
+                                <div class="blog_thumb">
+                                    <a href="{% url 'app-website:block-detail' blog.id %}">
+                                        {% set_img blog.image as indice %}
+                                        <img src="{{ indice }}" alt="">
+                                    </a>
+                                </div>
+                                <figcaption class="blog_content">
+                                    <h4 class="post_title">
+                                        <a href="{% url 'app-website:block-detail' blog.id %}">{{ blog.title }}</a>
+                                    </h4>
+                                    <p class="post_desc">{{ blog.descripcion_corta | safe }}</p>
+                                    <footer class="blog_footer">
+                                        <a href="{{% url 'app-website:block-detail' blog.id %}">Continue Reading</a>
+                                    </footer>
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!--blog img end-->
+
+    <!--newsletter area start-->
+    <div class="newsletter_area_start newsletter_two">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Obtenga un <span>descuento</span> por su suscripción</h2>
+                    </div>
+                    <div class="newsletter_container">
+                        <div class="subscribe_form">
+                            <form id="mc-form" class="mc-form footer-newsletter">
+                                <input id="mc-email" type="email" autocomplete="off" placeholder="Ingresa tu correo"/>
+                                <button id="mc-submit">Suscribirse</button>
+                                <div class="email_icon">
+                                    <i class="icon-mail"></i>
+                                </div>
+                            </form>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts text-centre">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div><!-- mailchimp-alerts end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--newsletter area end-->
+{% endblock %}

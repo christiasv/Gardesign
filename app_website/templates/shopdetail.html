@@ -1,0 +1,159 @@
+{% extends 'base/base2.html' %}
+
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <!--breadcrumbs area start-->
+    <div class="banner_shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content" style="color: white;">
+                        <h3>Articulos</h3>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li>Detalles del producto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v9.0&appId=319117778792165&autoLogAppEvents=1"
+            nonce="Hb62qgzu"></script>
+
+    <!--product details start-->
+    <div class="product_details mt-100 mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product-details-tab">
+                        <div id="img-1" class="zoomWrapper single-zoom">
+                            <a href="#">
+                                <img id="zoom1" src="{{ img_init.imagen.url }}"
+                                     data-zoom-image="{{ img_init.imagen.url }}" alt="big-1">
+                            </a>
+                        </div>
+                        <div class="single-zoom-thumb">
+                            <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
+                                {% for producto in productos %}
+                                    <li>
+                                        <a href="#" data-update=""
+                                           class="elevatezoom-gallery {% if forloop.counter0 == 0 %} active {% endif %}"
+                                           data-image="{{ producto.imagen.url }}"
+                                           data-zoom-image="{{ producto.imagen.url }}">
+                                            <img src="{{ producto.imagen.url }}" alt="zo-th-1"/>
+                                        </a>
+
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product_d_right">
+                        <form action="#">
+
+                            <h1><a href="#">{{ img_init.producto.name }}</a></h1>
+                            <div class="product_desc">
+                                {{ img_init.producto.description | safe }}
+                            </div>
+                        </form>
+                        <div class="priduct_social">
+                            <ul>
+                                <div class="fb-like" data-href="{{ url_facebook }}" data-width=""
+                                     data-layout="button" data-action="like" data-size="small" data-share="false"></div>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--product area start-->
+    <section class="product_area related_products">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Ultimos productos</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="product_carousel product_column4 owl-carousel">
+                    {% for producto in ultimos_productos %}
+                        <div class="col-lg-3">
+                            <article class="single_product">
+                                <figure>
+                                    <div class="product_thumb">
+                                        <a class="primary_img" href="{% url 'app-website:shop-detail' producto.id %}">
+                                            <img src="{{ producto.cover_image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <figcaption class="product_content">
+                                        <h4 class="product_name">
+                                            <a href="{% url 'app-website:shop-detail' producto.id %}">commodo augue
+                                                nisi</a>
+                                        </h4>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--product area end-->
+
+    <!--brand area start-->
+    <!--<div class="brand_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="brand_container owl-carousel">
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand1.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand2.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand3.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand4.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand5.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand6.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand2.png' %}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+    <!--brand area end-->
+
+{% endblock %}

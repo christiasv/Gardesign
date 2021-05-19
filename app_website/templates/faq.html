@@ -1,0 +1,106 @@
+{% extends 'base/base2.html' %}
+
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li>Preguntas frecuentes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+    <!--faq area start-->
+    <div class="faq_content_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="faq_content_wrapper">
+                        <h4>A continuación se encuentran las preguntas frecuentes, puede encontrar la respuesta por sí mismo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id erat sagittis, faucibus metus malesuada, eleifend turpis. Mauris semper augue id nisl aliquet, a porta lectus mattis. Nulla at tortor augue. In eget enim diam. Donec gravida tortor sem, ac fermentum nibh rutrum sit amet. Nulla convallis mauris vitae congue consequat. Donec interdum nunc purus, vitae vulputate arcu fringilla quis. Vivamus iaculis euismod dui.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--Accordion area-->
+    <div class="accordion_area">
+        <div class="container">
+            <div class="row">
+            <div class="col-12">
+                <div id="accordion" class="card__accordion">
+                  <div class="card card_dipult">
+                    <div class="card-header card_accor" id="headingOne">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          ¿Qué beneficios tiene adquirir este producto o servicio?
+
+                          <i class="fa fa-plus"></i>
+                          <i class="fa fa-minus"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                           <p>Uno de los elementos principales de tener cerca desde un macetero hasta un jardín, donde puedes preferir relajarte al leer un libro al aire libre o simplemente contemplar el espacio. Tras una larga jornada laboral, no hay nada mejor que disponer de un ambiente como este para despejar la mente y desconectarte.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card  card_dipult">
+                    <div class="card-header card_accor" id="headingTwo">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          ¿En cuánto tiempo tendré listo mi producto?
+                           <i class="fa fa-plus"></i>
+                           <i class="fa fa-minus"></i>
+
+                        </button>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                      <div class="card-body">
+                        <p>La entrega de productos de jardinería es de forma inmediata y otras un máximo de 02 días hábiles dependiendo la cantidad y la distancia de recepción, en caso de visitas técnicas para proyectos paisajísticos son de forma inmediata.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card  card_dipult">
+                    <div class="card-header card_accor" id="headingThree">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                         ¿Qué métodos de pago aceptan?
+                           <i class="fa fa-plus"></i>
+                           <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                      <div class="card-body">
+                        <p>Para darte mayor seguridad y confianza contamos con cuentas corriente empresarial en los distintos bancos.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--Accordion area end-->
+    <!--faq area end-->
+
+{% endblock %}

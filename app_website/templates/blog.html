@@ -1,0 +1,109 @@
+{% extends 'base/base2.html' %}
+
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'assets/js/moment/moment.js' %}"></script>
+    <script src="{% static 'assets/web/block.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <h3>Blog</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li>blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs area end-->
+
+<!--blog area start-->
+<div class="blog_page_section mt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div class="blog_wrapper" id="div_block"
+                     data-url-detail="{% url 'app-website:block-detail' 0 %}"
+                     data-url="{% url 'app-administracion:api:list-blogs-list' %}">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="blog_sidebar_widget">
+                    <div class="widget_list widget_search">
+                        <div class="widget_title">
+                            <h3>Busqueda</h3>
+                        </div>
+                        <input placeholder="..." type="text" id="search_c">
+                        <button id="buscar">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--blog area end-->
+
+<!--blog pagination area start-->
+<div class="blog_pagination">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="pagination" id="block_pagination">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--blog pagination area end-->
+
+<!--brand area start-->
+<!--<div class="brand_area color_five">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="brand_container owl-carousel">
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand1.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand2.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand3.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand4.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand5.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand6.png' %}" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="{% static 'assets/img/brand/brand2.png' %}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--brand area end-->
+
+{% endblock %}

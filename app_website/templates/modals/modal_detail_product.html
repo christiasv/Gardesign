@@ -1,0 +1,120 @@
+{% load static %}
+
+<div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="icon-x"></i></span>
+            </button>
+            <div class="modal_body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="modal_tab">
+                                <div class="tab-content product-details-large" id="detail_foto">
+{#                                    <div class="tab-pane fade show active" id="tab1" role="tabpanel">#}
+{#                                        <div class="modal_tab_img">#}
+{#                                            <a href="#"><img src="{% static 'assets/img/product/productbig1.jpg' %}"#}
+{#                                                             alt=""></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="tab-pane fade" id="tab2" role="tabpanel">#}
+{#                                        <div class="modal_tab_img">#}
+{#                                            <a href="#"><img src="{% static 'assets/img/product/productbig2.jpg' %}"#}
+{#                                                             alt=""></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="tab-pane fade" id="tab3" role="tabpanel">#}
+{#                                        <div class="modal_tab_img">#}
+{#                                            <a href="#"><img src="{% static 'assets/img/product/productbig3.jpg' %}"#}
+{#                                                             alt=""></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="tab-pane fade" id="tab4" role="tabpanel">#}
+{#                                        <div class="modal_tab_img">#}
+{#                                            <a href="#"><img src="{% static 'assets/img/product/productbig4.jpg' %}"#}
+{#                                                             alt=""></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                </div>
+                                <div class="modal_tab_button" id="multi_gallery">
+{#                                    <ul class="nav product_navactive owl-carousel" role="tablist" >#}
+{#                                        <li>#}
+{#                                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab"#}
+{#                                               aria-controls="tab1" aria-selected="false"><img#}
+{#                                                    src="{% static 'assets/img/product/product1.jpg' %}" alt=""></a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab"#}
+{#                                               aria-controls="tab2" aria-selected="false"><img#}
+{#                                                    src="{% static 'assets/img/product/product2.jpg' %}" alt=""></a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a class="nav-link button_three" data-toggle="tab" href="#tab3" role="tab"#}
+{#                                               aria-controls="tab3" aria-selected="false"><img#}
+{#                                                    src="{% static 'assets/img/product/product3.jpg' %}" alt=""></a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a class="nav-link" data-toggle="tab" href="#tab4" role="tab"#}
+{#                                               aria-controls="tab4" aria-selected="false"><img#}
+{#                                                    src="{% static 'assets/img/product/product8.jpg' %}" alt=""></a>#}
+{#                                        </li>#}
+{##}
+{#                                    </ul>#}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <div class="modal_right">
+                                <div class="modal_title mb-10">
+                                    <h2 id="titulo_modal"></h2>
+                                </div>
+                                <div class="modal_description mb-15">
+                                    <p id="descripcion_modal"></p>
+                                </div>
+                                <div class="variants_selects">
+{#                                    <div class="variants_size">#}
+{#                                        <h2>size</h2>#}
+{#                                        <select class="select_option">#}
+{#                                            <option selected value="1">s</option>#}
+{#                                            <option value="1">m</option>#}
+{#                                            <option value="1">l</option>#}
+{#                                            <option value="1">xl</option>#}
+{#                                            <option value="1">xxl</option>#}
+{#                                        </select>#}
+{#                                    </div>#}
+{#                                    <div class="variants_color">#}
+{#                                        <h2>color</h2>#}
+{#                                        <select class="select_option">#}
+{#                                            <option selected value="1">purple</option>#}
+{#                                            <option value="1">violet</option>#}
+{#                                            <option value="1">black</option>#}
+{#                                            <option value="1">pink</option>#}
+{#                                            <option value="1">orange</option>#}
+{#                                        </select>#}
+{#                                    </div>#}
+{#                                    <div class="modal_add_to_cart">#}
+{#                                        <a href="contact.html" class="btn btn-dark">Consultar stock</a>#}
+{#                                    </div>#}
+                                </div>
+                                <div class="modal_social footer_social">
+                                    <h2>Nuestras redes sociales</h2>
+                                    <ul>
+                                        <li><a href="{{ url_facebook }}" target="_blank"><i
+                                                class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ url_instagram }}" target="_blank"><i
+                                                class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ url_whatsapp }}" target="_blank"><i class="fa fa-whatsapp"
+                                                                                                   aria-hidden="true"></i></a>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

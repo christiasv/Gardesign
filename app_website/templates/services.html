@@ -1,0 +1,198 @@
+{% extends 'base/base2.html' %}
+
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'assets/web/services.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <h3>Servicios</h3>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li>Nuestros Servicios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--services img area-->
+    <div class="services_gallery mt-100">
+        <div class="container">
+            <div class="row" id="contenido_servicio"
+                 data-url-detail="{% url 'app-website:service-detail' 0 %}"
+                 data-url="{% url 'app-administracion:api:list-api-service-list' %}">
+            </div>
+        </div>
+    </div>
+    <!--services img end-->
+
+    <!--our services area-->
+    <div class="our_services">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="services_title">
+                        <h2>Nuestros Servicios</h2>
+                        <p>¿Que tienen en comun todos nuestros servicios a diferencia de otros?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="services_item">
+                        <div class="services_icone">
+                            <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </div>
+                        <div class="services_desc">
+                            <h3>SISTEMA DE RIEGO</h3>
+                            <p>Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo.
+                                Si su jardín es pequeño y desea hacer reforma, conseguirá un espacio que no imaginaba.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services_item">
+                        <div class="services_icone">
+                            <i class="fa fa-umbrella"></i>
+                        </div>
+                        <div class="services_desc">
+                            <h3>TARIMA</h3>
+
+                            <p>Una de las tendencias en terrazas exteriores y patios es la colocación de tarimas que ayuda a reducir el mantenimiento.
+                                Además de tarimas sintéticas, le ofrecemos tarimas de madera tropical que soportan condiciones extremas y logran un acabado
+                                especial.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services_item">
+                        <div class="services_icone">
+
+                            <i class="fa fa-camera"></i>
+
+                        </div>
+                        <div class="services_desc">
+                            <h3>ILUMINACIÓN</h3>
+
+                            <p>La iluminación de jardines y terrazas exteriores es fundamental en las noches de verano. Para disfrutar
+                                del encanto de esas veladas, le ofrecemos soluciones ideales de iluminación exterior.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services_item">
+                        <div class="services_icone">
+                            <i class="fa fa-cog"></i>
+                        </div>
+                        <div class="services_desc">
+                            <h3>MANTENIMIENTO DE JARDINES</h3>
+                            <p>Un jardín descuidado pierde todo su encanto y sabemos que no es sencillo compaginar el trabajo con la jardinería.
+                                Por eso le ofrecemos nuestras manos jardineras profesionales para el mantenimiento de su jardín.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services_item">
+                        <div class="services_icone">
+                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        </div>
+                        <div class="services_desc">
+                            <h3>CESPED ARTIFICIAL</h3>
+                            <p>Los acabados realistas del césped artificial lo convierten en un elemento perfecto para complementar jardines de diseño.
+                                Ofrecemos diferentes calidades con diferentes precios para adaptarnos a sus necesidades.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services_item">
+                        <div class="services_icone">
+                            <i class="fa fa-headphones"></i>
+                        </div>
+                        <div class="services_desc">
+                            <h3>ATENCION</h3>
+                            <p>Estaremos atentos ante cualquier duda que se presente en el transcurso del proyecto y garantia de nuestros servicios.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services_item">
+                        <div class="services_icone">
+                            <i class="fa fa-leaf"></i>
+                        </div>
+                        <div class="services_desc">
+                            <h3>DISEÑO DE JARDINES</h3>
+                            <p>Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo. Si su jardín es pequeño y desea hacer
+                                reforma, conseguirá un espacio que no imaginaba.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--our services are end-->
+
+    <!--services section area-->
+    <div class="unlimited_services">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="services_section_thumb">
+                        <img src="{% static 'assets/img/service/services4.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="unlimited_services_content">
+                        <h1>Ideas Ilimitadas</h1>
+                        <p>Tenemos la mayor variedad de ideas para que tu lugar de relajo especial... Lorem ipsum dolor
+                            sit amet, consectetur adipisicing elit. Aliquam deleniti doloribus laudantium officia
+                            tempore vel! Ab adipisci alias aperiam atque, eos ipsam laborum minima nesciunt pariatur
+                            placeat quidem rerum? Cupiditate?</p>
+                        <div class="view__work">
+                            <a href="#">MORE INFO <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--services section end-->
+
+    <!--advantages wordpress -->
+    <div class="advantages_ecommerce">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 col-md-8 col-sm-12">
+                    <div class="advantages_content">
+                        <h3>Para mayor detalle de nuestros servicios</h3>
+                        <p>Y porder brindarte la mejor de tus experiencias haz clic para más información</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-4 col-sm-12">
+                    <div class="advantages_button">
+                        <a href="{% url 'app-website:contact' %}" title="Más información">Contactenos <i
+                                class="fa fa-angle-right"></i></a>
+                        <a href="{{ url_whatsapp }}" title="Whatsapp " target="_blank"><i
+                                class="fa fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--advantages wordpress end-->
+
+{% endblock %}

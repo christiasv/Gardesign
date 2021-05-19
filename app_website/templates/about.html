@@ -1,0 +1,282 @@
+{% extends 'base/base2.html' %}
+{% load custom_template_tags %}
+
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <h3>Nosotros</h3>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li>Nosotros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--about section area -->
+    <section class="about_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <figure>
+                        <div class="about_thumb">
+                            {% set_img html_we.cover_image as indice %}
+                            <img src="{{ indice }}" alt="">
+                        </div>
+                        <figcaption class="about_content">
+                            <h1>{{ html_we.title }}</h1>
+                            {{ html_we.description | safe }}
+                            <div class="about_signature">
+                                <img src="{% static 'assets/img/about/about-us-signature.png' %}" alt="">
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--about section end-->
+
+    <!--chose us area start-->
+    <div class="choseus_area" data-bgimg="{% static 'assets/img/about/about-us-policy-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="single_chose">
+                        <div class="chose_icone">
+                            <img src="{% static 'assets/img/about/About_icon1.png' %}" alt="">
+                        </div>
+                        <div class="chose_content">
+                            <h3>Modelos creativos</h3>
+                            <p>Los mejores productos y servicios para que la experiencia en hogar sea unica.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single_chose">
+                        <div class="chose_icone">
+                            <img src="{% static 'assets/img/about/About_icon2.png' %}" alt="">
+                        </div>
+                        <div class="chose_content">
+                            <h3>Garantia al 100% en servicios y productos</h3>
+                            <p>Nuestros servicios/productos son 100% confiables, durareos y de la mejor calidad.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single_chose">
+                        <div class="chose_icone">
+                            <img src="{% static 'assets/img/about/About_icon3.png' %}" alt="">
+                        </div>
+                        <div class="chose_content">
+                            <h3>Soporte en línea</h3>
+                            <p>Nuestros profesionales estarán para atenderlo ante cualquier pregunta o
+                                inconveniente.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--chose us area end-->
+
+    <!--services img area-->
+    <div class="about_gallery_section">
+        <div class="container">
+            <div class="about_gallery_container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <article class="single_gallery_section">
+                            <figure>
+                                <div class="gallery_thumb">
+                                    {% set_img we.our_mission_img as indice %}
+                                    <img src="{{indice }}" alt="">
+                                </div>
+                                <figcaption class="about_gallery_content">
+                                    <h3>{{ we.our_mission_title | safe }}</h3>
+                                    {{ we.our_mission_description | safe }}
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <article class="single_gallery_section">
+                            <figure>
+                                <div class="gallery_thumb">
+                                    {% set_img we.our_vision_img as indice %}
+                                    <img src="{{ indice }}" alt="">
+                                </div>
+                                <figcaption class="about_gallery_content">
+                                    <h3>{{ we.our_vision_title | safe }}</h3>
+                                    {{ we.our_vision_description | safe }}
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <article class="single_gallery_section">
+                            <figure>
+                                <div class="gallery_thumb">
+                                    {% set_img we.our_values_img as indice %}
+                                    <img src="{{ indice }}" alt="">
+                                </div>
+                                <figcaption class="about_gallery_content">
+                                    <h3>{{ we.our_values_title | safe }}</h3>
+                                    {{ we.our_values_description | safe }}
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--services img end-->
+
+    <!--testimonial area start-->
+    <div class="faq-client-say-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="faq-client_title">
+                        <h2>Preguntas frecuentes</h2>
+                    </div>
+                    <div class="faq-style-wrap" id="faq-five">
+                        <!-- Panel-default -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">
+                                    <a id="octagon" class="collapsed" role="button" data-toggle="collapse"
+                                       data-target="#faq-collapse1" aria-expanded="true" aria-controls="faq-collapse1">
+                                        <span class="button-faq"></span>¿Qué beneficios tiene adquirir este producto o
+                                        servicio?</a>
+                                </h5>
+                            </div>
+                            <div id="faq-collapse1" class="collapse show" aria-expanded="true" role="tabpanel"
+                                 data-parent="#faq-five">
+                                <div class="panel-body">
+                                    <p>Uno de los elementos principales de tener cerca desde un macetero hasta un
+                                        jardín,
+                                        donde puedes preferir relajarte al leer un libro al aire libre o simplemente
+                                        contemplar el espacio.
+                                    </p>
+                                    <p> Tras una larga jornada laboral, no hay nada mejor que disponer de un ambiente
+                                        como este para despejar la mente y desconectarte.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Panel-default -->
+
+                        <!-- Panel-default -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-target="#faq-collapse2" aria-expanded="false" aria-controls="faq-collapse2">
+                                        <span class="button-faq"></span>¿En cuánto tiempo tendré listo mi producto?</a>
+                                </h5>
+                            </div>
+                            <div id="faq-collapse2" class="collapse" aria-expanded="false" role="tabpanel"
+                                 data-parent="#faq-five">
+                                <div class="panel-body">
+                                    <p>La entrega de productos de jardinería es de forma inmediata y otras un máximo de
+                                        02 días hábiles
+                                        dependiendo la cantidad y la distancia de recepción, en caso de visitas técnicas
+                                        para proyectos
+                                        paisajísticos son de forma inmediata.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Panel-default -->
+
+                        <!-- Panel-default -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-target="#faq-collapse3" aria-expanded="false" aria-controls="faq-collapse3">
+                                        <span class="button-faq"></span>¿Qué métodos de pago aceptan?</a>
+                                </h5>
+                            </div>
+                            <div id="faq-collapse3" class="collapse" role="tabpanel" data-parent="#faq-five">
+                                <div class="panel-body">
+                                    <p>Para darte mayor seguridad y confianza, contamos con cuentas
+                                        corriente empresarial en los distintos bancos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Panel-default -->
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <!--testimonial area start-->
+                    <div class="testimonial_area  testimonial_about">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="section_title">
+                                        <h2>¿Qué Dicen Nuestros Clientes?</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial_container">
+                                <div class="row">
+                                    <div class="testimonial_carousel owl-carousel">
+                                        {% for comment in comments %}
+                                            <div class="col-12">
+                                                <div class="single-testimonial">
+                                                    <div class="testimonial-icon-img">
+                                                        <img src="{% static 'assets/img/about/testimonials-icon.png' %}"
+                                                             alt="">
+                                                    </div>
+                                                    <div class="testimonial_content">
+                                                        {{ comment.comments | safe }}
+                                                        <div class="testimonial_text_img">
+                                                            <a href="#">
+                                                                {% set_img comment.image as indice %}
+                                                                <img src="{{ indice }}" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="testimonial_author">
+                                                            <p><a href="#">{{ comment.user }}</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--testimonial area end-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--testimonial area end-->
+
+{% endblock %}

@@ -1,0 +1,310 @@
+{% load static %}
+{% load menu_generator %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from demo.hasthemes.com/lukani-preview-v1/lukani/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Jan 2021 04:42:53 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Gardesign - Jardineria & Paisajismo </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/isotipo.png' %}">
+
+
+    <!-- CSS
+    ========================= -->
+    <!--bootstrap min css-->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+    <!--owl carousel min css-->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <!--slick min css-->
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <!--magnific popup min css-->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!--font awesome css-->
+    <link rel="stylesheet" href="{% static 'assets/css/font.awesome.css' %}">
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">#}
+    <!--animate css-->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!--jquery ui min css-->
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css' %}">
+    <!--slinky menu css-->
+    <link rel="stylesheet" href="{% static 'assets/css/slinky.menu.css' %}">
+    <!--plugins css-->
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <!--modernizr min js here-->
+    <script src="{% static 'assets/js/vendor/modernizr-3.7.1.min.js' %}"></script>
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+
+<!--header area start-->
+
+<!--offcanvas menu area start-->
+<div class="off_canvars_overlay">
+
+</div>
+<div class="offcanvas_menu">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="canvas_open">
+                    <a href="javascript:void(0)"><i class="icon-menu"></i></a>
+                </div>
+                <div class="offcanvas_menu_wrapper">
+                    <div class="canvas_close">
+                        <a href="javascript:void(0)"><i class="icon-x"></i></a>
+                    </div>
+                    <div class="search_container">
+                        <form action="#">
+                            <div class="search_box">
+                                <input placeholder="Search product..." type="text">
+                                <button type="submit"><i class="icon-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="call-support">
+                        <p>Atención al cliente: <a href="{{ url_whatsapp }}" target="_blank">(+51) 989 547
+                            891</a></p>
+                    </div>
+                    <div id="menu" class="text-left ">
+                        <ul class="offcanvas_main_menu">
+                            {% get_menu "NAV_MENU_LEFT_ADMINISTRADOR" as left_menu %}
+                            {% for item in left_menu %}
+                                <li>
+                                    <a class="{% if item.selected %} active {% endif %}"
+                                       href="{{ item.url }}">{{ item.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="offcanvas_footer">
+                        <span><a href="mailto: ventas@gardsign.pe"><i class="fa fa-envelope-o"></i> ventas@gardesign.pe</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--offcanvas menu area end-->
+<header>
+    <div class="main_header">
+        <div class="header_middle">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-4">
+                        <div class="logo">
+                            <a href="{% url 'app-website:home' %}"><img
+                                    src="{% static 'assets/img/logo/Gardesign.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-6 col-6">
+                        <div class="header_right_info">
+                            <div class="search_container">
+                                <form action="#" id="form_search"
+                                      data-redirect="{% url 'app-website:shop' %}"
+                                      data-url="{% url 'app-administracion:api:list-api-producto-list' %}">
+                                    <div class="search_box">
+                                        <input id="input_s" placeholder="Buscar producto" type="text">
+                                        <button type="submit"><i class="icon-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom sticky-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-9">
+                        <!--main menu start-->
+                        <div class="main_menu menu_position">
+                            <nav>
+                                <ul>
+                                    {% get_menu "NAV_MENU_LEFT_ADMINISTRADOR" as left_menu %}
+                                    {% for item in left_menu %}
+                                        <li>
+                                            <a class="{% if item.selected %} active {% endif %}"
+                                               href="{{ item.url }}">{{ item.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--main menu end-->
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="call-support">
+                            <p>Atención al cliente: <a href="{{ url_whatsapp }}" target="_blank">(+51) 989 547
+                                891</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header area end-->
+
+{% block content %}
+{% endblock %}
+
+<!--footer area start-->
+<footer class="footer_widgets">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="widgets_container contact_us">
+                        <h3>Horarios</h3>
+                        <p><span>Mon - Fri:</span> 8AM - 10PM</p>
+                        <p><span>Sat:</span> 9AM-8PM</p>
+                        <p><span>Suns:</span> 14hPM-18hPM</p>
+                        <p><b>Trabajemos en tu sueño</b></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="widgets_container widget_menu">
+                        <h3>Información</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="{% url 'app-website:about' %}">Nosotros</a></li>
+                                <li><a href="{% url 'app-website:contact' %}">Contactenos</a></li>
+                                <li><a href="{% url 'app-website:faq' %}">Preguntas frecuentes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="widgets_container widget_app">
+                        <div class="footer_logo">
+                            <a href="{% url 'app-website:home' %}"><img
+                                    src="{% static 'assets/img/logo/Gardesign.png' %}" alt=""></a>
+                        </div>
+                        <div class="footer_social">
+                            <ul>
+                                <li>
+                                    <a href="{{ url_facebook }}" target="_blank"><i class="fa fa-facebook"
+                                                                                    aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_instagram }}" target="_blank"><i class="fa fa-instagram"
+                                                                                     aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_whatsapp }}" target="_blank"><i class="fa fa-whatsapp"
+                                                                                    aria-hidden="true"></i></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="widgets_container widget_menu">
+                        <h3>Variedades</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="{% url 'app-website:services' %}">Servicios</a></li>
+                                <li><a href="{% url 'app-website:shop' %}">Articulos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="widgets_container widget_menu">
+                        <h3>Miscelanea</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="{% url 'app-website:contact' %}">Proyectos</a></li>
+                                <li><a href="{% url 'app-website:blog' %}">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="copyright_area">
+                        <p>Copyright &copy; 2021 <a href="#">Gardesign</a> Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer area end-->
+
+
+<!-- JS
+============================================ -->
+<!--map js code here-->
+<script src="https://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry&amp;v=3.22&amp;key=AIzaSyChs2QWiAhnzz0a4OEhzqCXwx_qA9ST_lE"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script src="{% static 'assets/js/map.js' %}"></script>
+
+<!--jquery min js-->
+
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>#}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--popper min js-->
+<script src="{% static 'assets/js/popper.js' %}"></script>
+<!--bootstrap min js-->
+<script src="{% static 'assets/js/bootstrap.js' %}"></script>
+<!--owl carousel min js-->
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<!--slick min js-->
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<!--magnific popup min js-->
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<!--counterup min js-->
+<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+<!--jquery countdown min js-->
+<script src="{% static 'assets/js/jquery.countdown.js' %}"></script>
+<!--jquery ui min js-->
+<script src="{% static 'assets/js/jquery.ui.js' %}"></script>
+<!--jquery elevatezoom min js-->
+<script src="{% static 'assets/js/jquery.elevatezoom.js' %}"></script>
+<!--isotope packaged min js-->
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<!--slinky menu js-->
+<script src="{% static 'assets/js/slinky.menu.js' %}"></script>
+<!-- Plugins JS -->
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+
+<!-- Main JS -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script src="{% static 'assets/web/base.js' %}"></script>
+
+{% block js %}
+{% endblock %}
+
+</body>
+
+
+<!-- Mirrored from demo.hasthemes.com/lukani-preview-v1/lukani/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Jan 2021 04:43:32 GMT -->
+</html>
